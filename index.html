@@ -12,6 +12,7 @@
 </head>
 
 <body>
+
     <div class="container">	
         <div class="user-container"></div>	
         <div class="quote-container"></div>	
@@ -20,15 +21,60 @@
             <div class="meat-container"></div>	
         </div>	
         <div class="friends">	
-            <h4>Friends</h4>	
+            <h4>Friends</h4>
             <div class="friends-container">	
             </div>	
         </div>	
-        <div class="buttons">	
-            <button>Load User Data</button>	
-            <button>Display User</button>	
+        <div class="buttons">
+            <button id="loadData">Load User Data</button>	
+            <button id="displayData">Display User</button>
+            <button id="saveUser">Save User</button>
+            <button id="DisplayUser">Display Saved User</button>
         </div>	
     </div>
+    
+    <script id="mainUser" type="text/x-handlebars-template">
+        <img id = "profile-pic" src={{pic}}>
+        <div class = "user-info">
+            <p>{{firstName}}  {{lastName}}</p>
+            <p>{{city}},  {{state}}</p>
+        </div>
+    </script>
+
+    <script id="friendsList" type="text/x-handlebars-template">
+        <div class = "friendsTable">
+            <ul>
+                <li>{{firstName}}  {{lastName}}</li>
+            </ul>
+        </div>
+    </script>
+
+    <script id="quote" type="text/x-handlebars-template">
+        <div>
+            <p>My Favorite Quote:<br>{{quote}}</p>
+            <p>Kanye West</p>
+        </div>
+    </script>
+
+    <script id="pokemon" type="text/x-handlebars-template">
+        
+        <div class="pokemon-container">
+            <img id = "pokemon-image" src = "{{img}}" alt = "{{pokemonName}}">
+            <div id = "pokemon-text">Favorite pokemon: {{pokemonName}}</div>
+        </div>
+    </script>
+
+    <script id="aboutMe" type="text/x-handlebars-template">
+        <div class = "meat-text">
+            <p>{{aboutMe}}</p>
+        </div>
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="APIManager.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
